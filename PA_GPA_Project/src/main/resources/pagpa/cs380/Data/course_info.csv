@@ -1,0 +1,49 @@
+Course ID,Course Name,Assignment Type,Weight,Is Exam,Is Key,Week
+PAED520,Foundations of Medicine,Exam #1,0.25,true,true,1
+PAED520,Foundations of Medicine,Exam #2,0.25,true,true,2
+PAED520,Foundations of Medicine,Exam #3,0.25,true,true,3
+PAED520,Foundations of Medicine,Exam #4,0.25,true,true,4
+PAED521,Pharmacotherapeutics I,Exam #1,0.50,true,true,1
+PAED521,Pharmacotherapeutics I,Exam #2,0.50,true,true,2
+PAED522,Patient Assessment & Skills I,Exam,0.30,true,true,1
+PAED522,Patient Assessment & Skills I,Practical,0.30,true,true,2
+PAED522,Patient Assessment & Skills I,Individual Assignment,0.20,false,false,3
+PAED522,Patient Assessment & Skills I,Faculty Evaluation of Student,0.20,false,true,4
+PAED523,PA Professional Practice I,HIPAA & BBP Certifications,0.40,false,true,1
+PAED523,PA Professional Practice I,Individual Assignments,0.30,false,false,2
+PAED523,PA Professional Practice I,Quiz,0.30,true,false,3
+PAED524,Laboratory & Diagnostic Testing,Exam #1,0.25,true,true,1
+PAED524,Laboratory & Diagnostic Testing,Exam #2,0.25,true,true,2
+PAED524,Laboratory & Diagnostic Testing,Exam #3,0.25,true,true,3
+PAED524,Laboratory & Diagnostic Testing,Exam #4,0.25,true,true,4
+PAED525,Clinical Anatomy & Physiology,Exam #1,0.40,true,true,1
+PAED525,Clinical Anatomy & Physiology,Exam #2,0.40,true,true,2
+PAED525,Clinical Anatomy & Physiology,Group Assignment,0.20,false,false,3
+PAED526,Health Across the Lifespan,Practical #1,0.33,true,true,1
+PAED526,Health Across the Lifespan,Practical #2,0.33,true,true,2
+PAED526,Health Across the Lifespan,Practical #3,0.34,true,true,3
+PAED530,Medicine I,Exam #1,0.50,true,true,5
+PAED530,Medicine I,Exam #2,0.50,true,true,7
+PAED531,Pharmacotherapeutics II,Exam #1,0.50,true,true,6
+PAED531,Pharmacotherapeutics II,Exam #2,0.50,true,true,8
+PAED532,Patient Assessment & Skills II,Exam,0.50,true,true,5
+PAED532,Patient Assessment & Skills II,Practical,0.50,true,true,7
+PAED533,PA Professional Practice II,Assignment #1,0.50,false,true,6
+PAED533,PA Professional Practice II,Assignment #2,0.50,false,true,8
+PAED534,Evidence Based Medicine,Essay,0.40,false,true,6
+PAED534,Evidence Based Medicine,Presentation,0.60,false,true,7
+PAED535,Introduction to Lifestyle Medicine,Project,0.50,false,true,6
+PAED535,Introduction to Lifestyle Medicine,Exam,0.50,true,true,8
+PAED540,Medicine II,Exam #1,0.50,true,true,9
+PAED540,Medicine II,Exam #2,0.50,true,true,11
+PAED541,Pharmacotherapeutics III,Exam #1,0.40,true,true,9
+PAED541,Pharmacotherapeutics III,Assignment,0.60,false,true,11
+PAED542,Patient Assessment & Skills III,Practical #1,0.50,true,true,10
+PAED542,Patient Assessment & Skills III,Practical #2,0.50,true,true,12
+PAED543,PA Professional Practice III,Certification,1.00,false,true,10
+PAED544,Principles of Emergency Medicine,Exam,0.40,true,true,10
+PAED544,Principles of Emergency Medicine,Simulation,0.60,false,true,12
+PAED545,Care of the Surgical Patient,Assignment,0.40,false,true,11
+PAED545,Care of the Surgical Patient,Exam,0.60,true,true,12
+PAED546,Clinical Decision Making,Case Study,0.50,false,true,11
+PAED546,Clinical Decision Making,Project,0.50,false,true,12 

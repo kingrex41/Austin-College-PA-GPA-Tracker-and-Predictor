@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--base for onedrive popup on studentdash pages-->
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="your.package.OneDrivePopupController">
+    <Label text="Connect to OneDrive"/>
+    <ProgressIndicator fx:id="progressIndicator" visible="false"/>
+    <Button text="Connect" onAction="#handleConnect"/>
+    <Button text="Cancel" onAction="#handleCancel"/>
+</VBox>

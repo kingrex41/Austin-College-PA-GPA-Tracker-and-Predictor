@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pagpa.cs380.GPAForecastController"
+      stylesheets="@style.css">
+      
+    <top>
+        <VBox alignment="CENTER" styleClass="header-background">
+            <padding>
+                <Insets bottom="5" left="0" right="0" top="5" />
+            </padding>
+            <ImageView fitWidth="1000" preserveRatio="true" styleClass="header-image">
+                <Image url="@images/LandingPageLogo.jpeg" />
+                <VBox.margin>
+                    <Insets bottom="0" left="0" right="0" top="0" />
+                </VBox.margin>
+            </ImageView>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="20" styleClass="main-container">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+              <!--  <Button fx:id="backButton" onAction="#handleBackButton" styleClass="sv-gen-report-button" text="Back to Student Dashboard"/> -->
+                <Label text="GPA Forecast" textFill="#fcb81e">
+                    <font>
+                        <Font name="Baskerville Bold" size="46.0" />
+                    </font>
+                </Label>
+            </HBox> 
+
+            <!-- Breadcrumb Trail -->
+            <HBox alignment="CENTER_LEFT" spacing="5">
+                <padding>
+                    <Insets top="0" right="0" bottom="10" left="0"/>
+                </padding>
+                <children>
+                    <Hyperlink text="Main Menu" onAction="#switchToMainMenu" styleClass="menu-link"/>
+                    <Label text="|" styleClass="menu-spacer"/>
+                    <Hyperlink text="All Students" onAction="#switchToAllStudents" styleClass="menu-link"/>
+                    <Label text="|" styleClass="menu-spacer"/>
+                    <Hyperlink text="Student Dashboard" onAction="#handleBackButton" styleClass="menu-link"/>
+                    <!-- Should not be here  <Label text="|" styleClass="menu-spacer"/>
+                    <Label text="GPA Forecast" styleClass="menu-link"/> -->
+                </children>
+            </HBox>
+
+            <!-- Main Content -->
+            <VBox spacing="15" styleClass="content-container">
+                <!-- Student Name Section -->
+                <VBox spacing="5" styleClass="section-container">
+                    <Label fx:id="studentNameLabel" text="Student: " textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="termLabel" text="Current Term: " textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                </VBox>
+                
+                <!-- Current GPA Section -->
+                <VBox spacing="5" styleClass="section-container">
+                    <Label text="Current GPA Information" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="currentGPAText" text="Current Cumulative GPA: --" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="currentTermGPAText" text="Current Term GPA: --" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                </VBox>
+
+                <!-- Course Selection Section -->
+                <VBox spacing="10" styleClass="section-container">
+                    <Label text="Enter Expected Grades for Current Courses" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Text fill="WHITE" text="Double-click the Expected Grade column to change grades">
+                        <font>
+                            <Font name="Baskerville" size="16.0" />
+                        </font>
+                    </Text>
+                    <TableView fx:id="selectedCoursesTable" VBox.vgrow="ALWAYS" editable="true">
+                        <columns>
+                            <TableColumn fx:id="courseCodeColumn" text="Course Code" prefWidth="120"/>
+                            <TableColumn fx:id="courseNameColumn" text="Course Name" prefWidth="250"/>
+                            <TableColumn fx:id="creditsColumn" text="Credits" prefWidth="70"/>
+                            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                            <TableColumn fx:id="expectedGradeColumn" text="Expected Grade" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Forecast Results Section -->
+                <VBox spacing="5" styleClass="section-container">
+                    <Label text="Forecast Results" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="forecastGPAText" text="Forecast Cumulative GPA: --" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="forecastTermGPAText" text="Forecast Term GPA: --" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                </VBox>
+
+                <!-- Action Buttons -->
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button fx:id="calculateButton" text="Calculate Forecast" onAction="#handleCalculate" styleClass="stat-button"/>
+                    <Button fx:id="clearButton" text="Reset Grades to B" onAction="#handleClear" styleClass="stat-button"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane> 

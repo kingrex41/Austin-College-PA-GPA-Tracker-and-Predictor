@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagpa.cs380.Views.CourseView">
+   <children>
+      <VBox alignment="CENTER" styleClass="header-background">
+         <padding>
+            <Insets bottom="5" left="0" right="0" top="5" />
+         </padding>
+         <ImageView fitWidth="1000" preserveRatio="true" styleClass="header-image">
+            <Image url="@images/LandingPageLogo.jpeg" />
+            <VBox.margin>
+               <Insets bottom="0" left="0" right="0" top="0" />
+            </VBox.margin>
+         </ImageView>
+      </VBox>
+      
+      <!--Title of Scene-->
+      <AnchorPane prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="39.0" spacing="20.0" />
+            
+            <!--Drop button to course which semester for course-->
+            <HBox alignment="CENTER_LEFT" layoutX="450" layoutY="60.0" spacing="10.0">
+               <children>
+               	  <Label styleClass="sv-selectCohortLabel" />
+               </children>
+            </HBox>
+            
+            <!-- Table-->
+            <TableView fx:id="courseTable" layoutX="14.0" layoutY="113.0" prefHeight="590.0" prefWidth="1300.0" styleClass="student-table">
+               <columns>
+               	  <TableColumn fx:id="termColumn" prefWidth="200.0" text="Semester" />
+               	  <TableColumn fx:id="courseNumColumn" prefWidth="200.0" text="Course Number" />
+                  <TableColumn fx:id="courseNameColumn" prefWidth="300.0" text="Course Name" />
+                  <TableColumn fx:id="profColumn" prefWidth="300.0" text="Professor" />
+                  <TableColumn fx:id="creditColumn" prefWidth="200.0" text="Course Credit" />
+                  <TableColumn fx:id="gradeColumn" prefWidth="100.0" text="Grade" />
+               </columns>
+            </TableView>
+
+			<!-- Back to Student dash/main menu breadcrumb -->
+            <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" spacing="5.0">
+               <children>
+               	  <Hyperlink onAction="#switchToMainMenu" styleClass="menu-link" text="Main Menu" />
+               	  <Label styleClass="menu-spacer" text="|" />
+               	  <Hyperlink onAction="#switchBackToAllStudents" styleClass="menu-link" text="All Students" />
+               	  <Label styleClass="menu-spacer" text="|" />
+               	  <Hyperlink onAction="#switchToStudentDash" styleClass="menu-link" text="Student Dashboard" />
+               </children>
+            </HBox>
+            
+            <!--Search field filter-->
+            <TextField fx:id="searchCourse" layoutX="14.0" layoutY="75.0" prefHeight="30.0" prefWidth="180.0" promptText="Search courses..." styleClass="sv-cohort-combobox" />
+            
+            <!--Label to display term GPA-->
+            <HBox alignment="CENTER_LEFT" layoutX="875" layoutY="61.0" spacing="10.0" />
+            <ComboBox fx:id="semesterComboBox" layoutX="204.0" layoutY="75.0" prefHeight="30.0" prefWidth="150.0" promptText="Select Semester" styleClass="grb" />
+            <Label layoutX="14.0" layoutY="33.0" prefHeight="31.0" prefWidth="190.0" styleClass="sv-title" stylesheets="@../../style.css" text="Course View">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

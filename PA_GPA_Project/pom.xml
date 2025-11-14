@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>pagpa</groupId>
+    <artifactId>cs380</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>21.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>21.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.9</version>
+        </dependency>
+        
+        <!-- JUnit5 dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+    		<groupId>org.junit.platform</groupId>
+    		<artifactId>junit-platform-suite</artifactId>
+    		<version>1.10.2</version> <!-- Use the latest available -->
+    		<scope>test</scope>
+		</dependency>
+        
+        <!-- Excep export dependencies-->
+        <dependency>
+    		<groupId>org.apache.poi</groupId>
+    		<artifactId>poi-ooxml</artifactId>
+    		<version>5.2.5</version>
+		</dependency>
+        
+        <!-- TestFX dependencies -->
+		<dependency>
+			<groupId>org.testfx</groupId>
+			<artifactId>testfx-core</artifactId>
+			<version>4.0.18</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.testfx</groupId>
+			<artifactId>testfx-junit5</artifactId>
+			<version>4.0.18</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.testfx</groupId>
+		    <artifactId>openjfx-monocle</artifactId>
+		    <version>21.0.2</version>
+		    <type>pom</type>
+		    <scope>test</scope>
+		</dependency>
+		
+		
+		<!-- Mockito dependencies -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.11.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>5.11.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
+    </dependencies>
+    <build>
+        <plugins>
+        
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.12.1</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <executions>
+                    <execution>
+                        <!-- Default configuration for running -->
+                        <!-- Usage: mvn clean javafx:run -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>pagpa.cs380.App</mainClass>
+                            <options>
+                                <option>--add-exports</option>
+                                <option>javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
+                                <option>--add-exports</option>
+                                <option>javafx.graphics/com.sun.javafx.util=ALL-UNNAMED</option>
+                                <option>--add-exports</option>
+                                <option>javafx.base/com.sun.javafx.reflect=ALL-UNNAMED</option>
+                                <option>--add-exports</option>
+                                <option>javafx.base/com.sun.javafx.beans=ALL-UNNAMED</option>
+                                <option>--add-exports</option>
+                                <option>javafx.graphics/com.sun.glass.ui=ALL-UNNAMED</option>
+                                <option>--add-opens</option>
+                                <option>javafx.graphics/com.sun.glass.ui=ALL-UNNAMED</option>
+                                <option>--add-opens</option>
+                                <option>javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED</option>
+                                <option>--add-opens</option>
+                                <option>javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED</option>
+                                <option>--add-opens</option>
+                                <option>javafx.base/com.sun.javafx.binding=ALL-UNNAMED</option>
+                                <option>--add-opens</option>
+                                <option>javafx.base/com.sun.javafx.event=ALL-UNNAMED</option>
+                                <option>--add-opens</option>
+                                <option>javafx.graphics/com.sun.javafx.stage=ALL-UNNAMED</option>
+                            </options>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <argLine>
+                        --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
+                        --add-exports javafx.graphics/com.sun.javafx.util=ALL-UNNAMED
+                        --add-exports javafx.base/com.sun.javafx.reflect=ALL-UNNAMED
+                        --add-exports javafx.base/com.sun.javafx.beans=ALL-UNNAMED
+                        --add-exports javafx.graphics/com.sun.glass.ui=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.glass.ui=ALL-UNNAMED
+                        --add-opens javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED
+                        --add-opens javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED
+                        --add-opens javafx.base/com.sun.javafx.binding=ALL-UNNAMED
+                        --add-opens javafx.base/com.sun.javafx.event=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.stage=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.traversal=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.layout=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.tk=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.geom=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.css=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.font=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.text=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.text=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.input=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.shape=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.transform=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.web=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.paint=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.effect=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.media=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.chart=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.canvas=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.image=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.skin=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.behavior=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.inputmap=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.tableview=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.treeview=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.listview=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.textfield=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.button=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.combobox=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.checkbox=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.radiobutton=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.slider=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.scrollbar=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.progressbar=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.tooltip=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.menu=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.tab=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.dialog=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.alert=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.cell=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.selection=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.skin.resources=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.behavior.resources=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.skin.caspian=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.skin.modena=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.skin.caspian.images=ALL-UNNAMED
+                        --add-opens javafx.graphics/com.sun.javafx.scene.control.skin.modena.images=ALL-UNNAMED
+                    </argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

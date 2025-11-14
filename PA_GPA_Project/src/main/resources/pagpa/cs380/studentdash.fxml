@@ -1,0 +1,390 @@
+<!-- OLD STUDENT DASH DESIGN/PAGE; NEW ONE IS NAMED STUDENTDASH2.FXML
+	<?xml version="1.0" encoding="UTF-8"?>
+
+
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+ <! NOTE: Moved things around a little to allow for the breadcrumbs
+Need to ask Divya and Walker where the scroll is in the FXML sheet to move it down 15 as well !! 
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1091.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagpa.cs380.StudentdashController">
+   <top>
+      <VBox alignment="CENTER" styleClass="header-background">
+            <padding>
+                <Insets bottom="5" left="0" right="0" top="5" />
+            </padding>
+            <ImageView fitWidth="1000" preserveRatio="true" styleClass="header-image">
+                <Image url="@images/LandingPageLogo.jpeg" />
+                <VBox.margin>
+                    <Insets bottom="0" left="0" right="0" top="0" />
+                </VBox.margin>
+            </ImageView>
+        </VBox>    
+   </top>
+   
+<! Old code for buttons on the bottom  
+   
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="130.0" prefWidth="1310.0" scaleShape="true" spacing="150" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToCourseDash" styleClass="stat-button" stylesheets="@style.css" text="Course View" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+            <Button mnemonicParsing="false" onAction="#switchToGpaForecast" styleClass="stat-button" stylesheets="@style.css" text="GPA Forecast" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+            <Button mnemonicParsing="false" styleClass="stat-button" stylesheets="@style.css" text="Student Encounter Notes" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+            <Button alignment="CENTER" mnemonicParsing="false" styleClass="stat-button" stylesheets="@style.css" text="Focused Learning Plan" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+            <Button mnemonicParsing="false" styleClass="stat-button" stylesheets="@style.css" text="Status History View" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </bottom> 
+   <center>
+      <GridPane maxHeight="600.0" prefHeight="600.0" prefWidth="1089.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="661.0" minWidth="10.0" prefWidth="214.31236267089844" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="661.0" minWidth="10.0" prefWidth="447.18763732910156" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="661.0" minWidth="10.0" prefWidth="13.6842041015625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="822.84423828125" minWidth="0.0" prefWidth="392.24066162109375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="708.9042358398438" minWidth="10.0" prefWidth="24.3690185546875" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="208.87802124023438" minHeight="10.0" prefHeight="24.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="224.48069763183594" minHeight="10.0" prefHeight="209.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="53.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="421.0" minHeight="10.0" prefHeight="228.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="102.5" minHeight="0.0" prefHeight="0.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="147.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+           
+           <! This is what I added to adjust the Student Dashboard down a little
+               <GridPane.margin>
+        	   	<Insets bottom="0" left="0" right="0" top="35" />
+    		   </GridPane.margin>
+               <children>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="70.0" prefWidth="464.0" text="Student Dashboard" textFill="#fcb81e">
+                     <font>
+                        <Font name="Baskerville Bold" size="46.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Line endX="282.29290771484375" endY="-0.20710676908493042" startX="-100.0" stroke="#fcb81e" />
+                        <FlowPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                        <Label text="Name:" textFill="#fcfcfc">
+                           <font>
+                              <Font name="Baskerville Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="studentName" text="Jane Doe" textFill="#fffefe">
+                           <font>
+                              <Font name="Baskerville Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                         </children>
+                        </FlowPane>
+                        <Label fx:id="liveGPA" prefHeight="38.0" prefWidth="330.0" text="Live Cumulative GPA: 3.5" textFill="WHITE" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Baskerville Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="cumGPA" prefHeight="38.0" prefWidth="294.0" text="Cumulative GPA: 3.2" textFill="WHITE" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Baskerville Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="termGPA" text="Term GPA: 0.0" textFill="WHITE">
+                           <font>
+                              <Font name="Baskerville Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Line endX="230.53707885742188" endY="23.171619415283203" startX="-150.9109344482422" startY="23.378726959228516" stroke="#fcb81e" />
+                     </children>
+                  </VBox>
+               </children>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </VBox>
+            <ScrollPane prefHeight="256.0" prefWidth="474.0" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="1">
+               <content>
+                  <VBox fx:id="standingPane" prefHeight="268.0" prefWidth="362.0" spacing="20">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </ScrollPane>
+            <VBox alignment="BOTTOM_LEFT" prefHeight="101.0" prefWidth="398.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+           
+            <! This was added to move "Meets Expectations" down a little
+                   <GridPane.margin>
+        	   	      <Insets bottom="0" left="0" right="0" top="15" />
+    		        </GridPane.margin>
+               <children>
+                  <Label fx:id="standing" alignment="BOTTOM_LEFT" prefHeight="46.0" prefWidth="360.0" text="Good Standing" textFill="WHITE">
+                     <font>
+                        <Font name="Baskerville Bold" size="30.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <LineChart fx:id="gpaChart" prefHeight="201.0" prefWidth="554.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="1">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+              </yAxis>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </LineChart>
+            
+             <! reconstructed table view to display csv data with csv data 
+            <TableView fx:id="gradeTable" prefHeight="229.0" prefWidth="554.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+			  <columns>
+			    <TableColumn fx:id="courseNameColumn" prefWidth="450.0" text="Course Name" />
+			    <TableColumn fx:id="gradeColumn" prefWidth="210.0" text="Grade" />
+			  </columns>
+            </TableView>
+            <Label alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="381.0" text="Grade Overview" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Baskerville Bold" size="30.0" />
+               </font>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </Label>
+            <VBox alignment="BOTTOM_LEFT" prefHeight="101.0" prefWidth="398.0" GridPane.columnIndex="3">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="421.0" text="    Student GPA Over Time" textFill="WHITE">
+                     <font>
+                        <Font name="Baskerville Bold" size="30.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="3.0" right="3.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <ToggleButton fx:id="viewToggleButton" onAction="#toggleGpaView" styleClass="chart-toggle-button" text="Show Weeks" textFill="#981f32">
+                     <font>
+                        <Font name="Baskerville" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ToggleButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+           
+            <! This whole section was added to add the breadcrumbs and add them in the exact same spot as the All Students page
+			<HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0">
+			    
+			    <padding>
+			        <Insets bottom="5" left="14" right="14" top="14" />
+			    </padding>
+			
+			    <children>
+			        <Hyperlink onAction="#switchToMainMenu" styleClass="menu-link" text="Main Menu" />
+			        <Label styleClass="menu-spacer" text="|" />
+			        <Hyperlink onAction="#switchBackToAllStudents" styleClass="menu-link" text="All Students" />
+			    </children>
+			</HBox>
+			
+			
+
+<! button 1: course view 
+
+    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="1">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToCourseDash" styleClass="stat-button" stylesheets="@style.css" text="Course View" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+            
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+			
+<! Button Two: GPA Forecast 			
+			
+	<HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="2">
+     <children>
+    
+        <Button mnemonicParsing="false" onAction="#switchToGpaForecast" styleClass="stat-button" stylesheets="@style.css" text="GPA Forecast" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+     
+     </children>
+     <padding>
+        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+     </padding>
+  </HBox> 
+  
+  <! Button Three: Student Encouter Notes  		
+			
+	<HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="3">
+     <children>
+    
+         <Button mnemonicParsing="false" styleClass="stat-button" stylesheets="@style.css" text="Student Encounter Notes" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+     
+     </children>
+     <padding>
+        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+     </padding>
+  </HBox> 
+  
+  <! Button Four: Focused Learning Plan  			
+			
+	<HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="4">
+     <children>
+    
+         <Button mnemonicParsing="false" styleClass="stat-button" stylesheets="@style.css" text="Focused Learning Plan" textAlignment="CENTER" wrapText="true" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+     
+     </children>
+     <padding>
+        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+     </padding>
+  </HBox> 
+  
+  <! Button Four: Status History View  	
+			
+	<HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="5">
+     <children>
+    
+        <Button mnemonicParsing="false" styleClass="stat-button" stylesheets="@style.css" text="Status History View" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+     
+     </children>
+     <padding>
+        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+     </padding>
+  </HBox> 
+  
+			
+			
+            <! <Button mnemonicParsing="false" onAction="#switchBackToAllStudents" styleClass="sv-gen-report-button" text="Back to All Students" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1"> 
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@../../style.css" />
+               </stylesheets></Button> 
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
+-->

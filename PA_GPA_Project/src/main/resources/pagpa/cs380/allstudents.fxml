@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Hyperlink?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" styleClass="root" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagpa.cs380.Views.AllStudentsView">
+
+   <children>
+
+      <!-- Header section (AC banner) -->
+      <VBox alignment="CENTER" styleClass="header-background">
+         <padding>
+            <Insets bottom="5" left="0" right="0" top="5" />
+         </padding>
+         <ImageView fitWidth="1000" preserveRatio="true" styleClass="header-image">
+            <Image url="@images/LandingPageLogo.jpeg" />
+            <VBox.margin>
+               <Insets bottom="0" left="0" right="0" top="0" />
+            </VBox.margin>
+         </ImageView>
+      </VBox>
+
+
+      <!-- All Students title Hbox -->
+      <AnchorPane prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="39.0" spacing="20.0">
+               <children>
+                  <Label styleClass="sv-title" text="All Students" />
+
+               </children>
+            </HBox>
+            
+           <!-- Back to Main Menu Breadcrumb -->
+            <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" spacing="10.0">
+               <children>
+               	  <Hyperlink text="Main Menu" onAction="#switchToMainMenu" styleClass="menu-link"/>
+               </children>
+            </HBox>
+            
+       		<!-- Select Cohort HBox -->
+            <HBox alignment="CENTER_LEFT" layoutX="1170.0" layoutY="85.0" spacing="10.0">
+               <children>
+               	  <Label styleClass="sv-selectCohortLabel" text="Select Cohort" />
+                  <ComboBox fx:id="cohortComboBox" prefHeight="30.0" prefWidth="150.0" promptText="Select Cohort" styleClass="grb" />
+               </children>
+            </HBox>
+            
+            <!-- Select Risk HBox -->
+            <HBox alignment="CENTER_LEFT" layoutX="915" layoutY="85.0" spacing="10.0">
+               <children>
+               	  <Label styleClass="sv-selectCohortLabel" text="Select Status" />
+                  <ComboBox fx:id="riskComboBox" prefHeight="30.0" prefWidth="150.0" promptText="Select Risk" styleClass="grb" />
+               </children>
+            </HBox>
+            
+            <!-- Select Advisor HBox -->
+            <HBox alignment="CENTER_LEFT" layoutX="650" layoutY="85.0" spacing="10.0">
+               <children>
+               	  <Label styleClass="sv-selectCohortLabel" text="Select Advisor" />
+                  <ComboBox fx:id="advisorComboBox" prefHeight="30.0" prefWidth="150.0" promptText="Select Advisor" styleClass="grb" />
+               </children>
+            </HBox>
+            
+       		<!-- Export to Excel HBox -->
+            <HBox alignment="CENTER_LEFT" layoutX="200.0" layoutY="85.0" spacing="10.0" /> 
+            
+            <!-- Search field HBox -->
+            <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="85.0" spacing="10.0" />
+            
+            <!-- Table-->
+            <TableView fx:id="studentTable" layoutX="14.0" layoutY="125.0" prefHeight="590.0" prefWidth="1400.0" styleClass="student-table">
+               <columns>
+                  <TableColumn fx:id="acidColumn" prefWidth="100.0" text="Student ID" />
+                  <TableColumn fx:id="lastNameColumn" prefWidth="150.0" text="Last Name" />
+                  <TableColumn fx:id="firstNameColumn" prefWidth="150.0" text="First Name" />
+                  <TableColumn fx:id="gpaColumn" prefWidth="100.0" text="GPA" />
+                  <TableColumn fx:id="liveGpaColumn" prefWidth="100.0" text="Live GPA" />
+                  <TableColumn fx:id="termGpaColumn" prefWidth="100.0" text="Term GPA" />
+                  <TableColumn fx:id="riskLevelColumn" prefWidth="150.0" text="Risk Level" />
+                  <TableColumn fx:id="advisorColumn" prefWidth="200.0" text="Advisor" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="150.0" text="Phone" />
+                  <TableColumn fx:id="cohortColumn" prefWidth="150.0" text="Cohort" />
+               </columns>
+            </TableView>
+
+			<!-- Search Students + Export to Excel -->
+            <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="700.0" spacing="10.0" />
+            <!--<Button layoutX="14.0" layoutY="62.0" onAction="#switchToMainMenu" styleClass="sv-gen-report-button" text="Back to Main Menu" /> -->
+            <Button fx:id="exportToExcelButton" layoutX="200.0" layoutY="85.0" prefHeight="30.0" prefWidth="150.0" styleClass="sv-gen-report-button" text="Export to Excel" onAction="#handleExport" />
+            <TextField fx:id="searchField" layoutX="14.0" layoutY="86.0" prefHeight="30.0" prefWidth="180.0" promptText="Search students..." styleClass="sv-cohort-combobox" />
+
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

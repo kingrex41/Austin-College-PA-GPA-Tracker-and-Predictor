@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pagpa.cs380.AssignmentForecastController"
+      stylesheets="@style.css">
+      
+    <top>
+        <VBox alignment="CENTER" styleClass="header-background">
+            <padding>
+                <Insets bottom="5" left="0" right="0" top="5" />
+            </padding>
+            <ImageView fitWidth="1000" preserveRatio="true" styleClass="header-image">
+                <Image url="@images/LandingPageLogo.jpeg" />
+                <VBox.margin>
+                    <Insets bottom="0" left="0" right="0" top="0" />
+                </VBox.margin>
+            </ImageView>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="20" styleClass="main-container">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Assignment Grade Forecast" textFill="#fcb81e">
+                    <font>
+                        <Font name="Baskerville Bold" size="46.0" />
+                    </font>
+                </Label>
+            </HBox> 
+
+            <!-- Breadcrumb Trail -->
+            <HBox alignment="CENTER_LEFT" spacing="5">
+                <padding>
+                    <Insets top="0" right="0" bottom="10" left="0"/>
+                </padding>
+                <children>
+                    <Hyperlink text="Main Menu" onAction="#switchToMainMenu" styleClass="menu-link"/>
+                    <Label text="|" styleClass="menu-spacer"/>
+                    <Hyperlink text="All Students" onAction="#switchToAllStudents" styleClass="menu-link"/>
+                    <Label text="|" styleClass="menu-spacer"/>
+                    <Hyperlink text="Student Dashboard" onAction="#switchToStudentDashboard" styleClass="menu-link"/>
+                    <Label text="|" styleClass="menu-spacer"/>
+                    <Hyperlink text="GPA Forecast" onAction="#switchToGPAForecast" styleClass="menu-link"/>
+                </children>
+            </HBox>
+
+            <!-- Main Content -->
+            <VBox spacing="15" styleClass="content-container">
+                <!-- Course Info Section -->
+                <VBox spacing="5" styleClass="section-container">
+                    <Label fx:id="studentNameLabel" text="Student: " textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="courseInfoLabel" text="Course: " textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="currentCourseGradeLabel" text="Current Course Grade: " textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="18.0" />
+                        </font>
+                    </Label>
+                </VBox>
+                
+                <!-- Assignments Table Section -->
+                <VBox spacing="10" styleClass="section-container">
+                    <Label text="Assignment Grades" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Text fill="WHITE" text="Double-click the Grade column to enter forecast grades for incomplete assignments">
+                        <font>
+                            <Font name="Baskerville" size="16.0" />
+                        </font>
+                    </Text>
+                    <TableView fx:id="assignmentsTable" VBox.vgrow="ALWAYS" editable="true">
+                        <columns>
+                            <TableColumn fx:id="assignmentNameColumn" text="Assignment" prefWidth="250"/>
+                            <TableColumn fx:id="weightColumn" text="Weight" prefWidth="80"/>
+                            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                            <TableColumn fx:id="gradeColumn" text="Grade" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Forecast Results Section -->
+                <VBox spacing="5" styleClass="section-container">
+                    <Label text="Forecast Results" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="forecastCourseGradeLabel" text="Forecast Course Grade: --" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="forecastTermGPALabel" text="Forecast Term GPA: --" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="forecastCumulativeGPALabel" text="Forecast Cumulative GPA: --" textFill="WHITE">
+                        <font>
+                            <Font name="Baskerville Bold" size="20.0" />
+                        </font>
+                    </Label>
+                </VBox>
+
+                <!-- Action Buttons -->
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button fx:id="calculateButton" text="Calculate Forecast" onAction="#handleCalculate" styleClass="stat-button"/>
+                    <Button fx:id="clearButton" text="Reset Grades" onAction="#handleClear" styleClass="stat-button"/>
+                    <Button fx:id="backButton" text="Back to GPA Forecast" onAction="#switchToGPAForecast" styleClass="stat-button"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane> 

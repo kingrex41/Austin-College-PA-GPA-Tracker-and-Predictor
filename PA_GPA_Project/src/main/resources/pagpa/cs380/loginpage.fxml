@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagpa.cs380.LoginPageController">
+   <children>
+      <Button fx:id="loginButton" layoutX="251.0" layoutY="325.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="124.0" text="Sign In">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="102.0" layoutY="200.0" prefHeight="23.0" prefWidth="91.0" text="Username:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="102.0" layoutY="265.0" prefHeight="23.0" prefWidth="91.0" text="Password:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="203.0" layoutY="194.0" promptText="Username">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordField" layoutX="202.0" layoutY="259.0" promptText="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <ImageView fitHeight="150.0" fitWidth="606.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/LandingPageLogo.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="279.0" layoutY="123.0" text="Sign In" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox fx:id="incorrectInfoBox" layoutX="213.0" layoutY="158.0" prefHeight="29.0" prefWidth="200.0" styleClass="incorrect-info-box" visible="false">
+         <children>
+            <Label fx:id="incorrectInfo" textFill="WHITE" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

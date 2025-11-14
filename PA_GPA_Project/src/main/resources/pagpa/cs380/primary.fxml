@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefWidth="1202.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagpa.cs380.PrimaryController">
+    <children>
+        <VBox alignment="CENTER" styleClass="header-background">
+            <padding>
+                <Insets bottom="5" left="0" right="0" top="5" />
+            </padding>
+            <ImageView fitWidth="1000" preserveRatio="true" styleClass="header-image">
+                <Image url="@images/LandingPageLogo.jpeg" />
+                <VBox.margin>
+                    <Insets bottom="0" left="0" right="0" top="0" />
+                </VBox.margin>
+            </ImageView>
+        </VBox>
+        <HBox alignment="CENTER_RIGHT" spacing="20">
+            <padding>
+                <Insets bottom="5" left="20" right="20" top="10" />
+            </padding>
+            <!-- <Label fx:id="currentDateLabel" prefHeight="30.0" prefWidth="150.0" styleClass="classOf-button" text="Current Date: " textAlignment="CENTER">
+            <Label fx:id="currentTermLabel" text="Current Term: " textFill="#fcb81e">
+                <font>
+                    <Font name="Baskerville Bold" size="16.0" />
+                </font>
+            </Label> -->
+        </HBox>
+        
+        <HBox alignment="CENTER" spacing="150" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+         <VBox prefHeight="730.0" prefWidth="252.0">
+            <children>
+               <Button fx:id="currentStudentsButton" onAction="#switchToCurrentCohort" prefHeight="50.0" prefWidth="250.0" styleClass="landing-page-buttons" text="CURRENT STUDENTS">
+                  <VBox.margin>
+                     <Insets bottom="50.0" top="140.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font></Button>
+                    <Button fx:id="allStudentsButton" onAction="#switchToAllStudents" prefHeight="50.0" prefWidth="250.0" styleClass="landing-page-buttons" text="ALL COHORTS">
+                  <VBox.margin>
+                     <Insets bottom="50.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font></Button>
+               <Button fx:id="generateReportButton" mnemonicParsing="false" onAction="#manageUnimplementedButtonClicks" prefHeight="50.0" prefWidth="279.0" styleClass="landing-page-buttons" text="GENERAL REPORT">
+                  <VBox.margin>
+                     <Insets bottom="50.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Button>
+               <Button fx:id="manageCurrButton" mnemonicParsing="false" onAction="#manageUnimplementedButtonClicks" prefHeight="50.0" prefWidth="250.0" styleClass="landing-page-buttons" text="MANAGE CURRICULUM">
+                  <VBox.margin>
+                     <Insets bottom="50.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Button>
+               <Button fx:id="manageCoachesButton" mnemonicParsing="false" onAction="#manageUnimplementedButtonClicks" prefHeight="50.0" prefWidth="250.0" styleClass="landing-page-buttons" text="MANAGE COACHES">
+                  <VBox.margin>
+                     <Insets bottom="50.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Button>
+            </children>
+            <HBox.margin>
+               <Insets left="150.0" />
+            </HBox.margin>
+         </VBox>
+            
+            <VBox alignment="CENTER" spacing="100">
+                <padding>
+                    <Insets top="0" />
+                </padding>
+                <VBox alignment="CENTER">
+               <Label fx:id="currentTermLabel" prefHeight="30.0" prefWidth="325.0" text="Current Term: " textAlignment="CENTER">
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin></Label>
+                  <Label fx:id="currentDateLabel" prefHeight="30.0" prefWidth="325.0" text="Current Date: " textAlignment="CENTER">
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin></Label> 
+                  <Label fx:id="classOfLabel" prefHeight="56.0" prefWidth="325.0" styleClass="classOf-button" text="Class of 2026" textAlignment="CENTER">
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin></Label> 
+                    <PieChart fx:id="pieChart" labelLineLength="50" prefHeight="600.0" prefWidth="800.0" styleClass="chart" />
+                    <Button fx:id="gpaButton" prefHeight="50" prefWidth="450.0" styleClass="classOf-button" text="Average GPA: 3.6">
+                  <VBox.margin>
+                     <Insets top="55.0" />
+                  </VBox.margin></Button>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="90.0" prefWidth="650.0" spacing="10" />
+            </VBox>
+        </HBox>
+    </children>
+</VBox>

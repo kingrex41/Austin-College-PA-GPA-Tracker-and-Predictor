@@ -1,0 +1,330 @@
+/*
+Styling for the application
+*/
+
+.root {
+    -fx-background-color: #404040;  /* Dark grey background on the whole page  */
+}
+
+.top-bar {
+    -fx-background-color: #981f32;  /* Dark crimson red color for top bar - changed to match AC swatch */
+    -fx-min-height: 100px;
+    -fx-pref-height: 100px;
+    -fx-max-height: 110px;
+}
+
+.header-image {
+    -fx-effect: none;
+}
+
+.header-background {
+    -fx-background-color: #981f32;
+    -fx-min-width: 100%;
+    -fx-padding: 0;
+    -fx-effect: none;
+}
+
+.gpa-button {
+    -fx-background-color: #981f32;  /* Dark crimson red color */
+    -fx-font-family: "Palatino";
+    -fx-font-size: 24px;
+    -fx-text-fill: #FFD700;  /* Gold text color */
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 3, 0, 0, 0);
+}
+
+.gpa-button:hover {
+    -fx-background-color: #b52539;  /* Slightly lighter red on hover */
+    -fx-cursor: hand;
+}
+
+.gpa-button:focused {
+    -fx-background-color: #981f32;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 3px;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #FFD700, 10, 0, 0, 0);
+    -fx-background-insets: 0, 1, 2;
+}
+
+.stat-button {
+    -fx-background-color: #981f32;  /* Updated red color for buttons */
+    -fx-min-width: 100px;  /* Doubled from 100px */
+    -fx-min-height: 80px;  /* Doubled from 80px */
+    -fx-max-width: 100px;  /* Doubled from 100px */
+    -fx-max-height: 80px;  /* Doubled from 80px */
+    -fx-font-family: "Palatino";
+    -fx-font-size: 14px;  /* Doubled from 14px to maintain proportion */
+    -fx-text-fill: #FFD700;  
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 3, 0, 0, 0);
+    -fx-translate-y: -60; /* Move buttons up by 60 pixels */
+}
+
+.stat-button:focused {
+    -fx-background-color: #981f32;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 3px;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #FFD700, 10, 0, 0, 0);
+    -fx-background-insets: 0, 1, 2;
+}
+
+.stat-button:hover {
+    -fx-background-color: #b52539;
+    -fx-cursor: hand;
+}
+
+.landing-page-buttons {
+	-fx-background-color: linear-gradient(
+	    from 0% 0% to 100% 0%,   
+	    #ffea55 0%,              
+	    #ffd700 100%             
+	);
+	-fx-min-width:250;
+	-fx-min-height:50;
+    -fx-font-family: "Palatino";
+    -fx-text-fill: #981f32;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 3, 0, 0, 0);
+    -fx-translate-y: -40;
+}
+
+.landing-page-buttons:hover {
+    -fx-background-color: #FFD700;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 3px;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #FFD700, 10, 0, 0, 0);
+    -fx-background-insets: 0, 1, 2;
+}
+
+.landing-page-buttons:hover {
+    -fx-background-color: #FFE44D;
+    -fx-cursor: hand;
+}
+
+/* Styling for the pie chart */
+.chart {
+    -fx-font-family: "Palatino";
+    -fx-text-fill: #FFD700;
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+}
+
+.chart-title {
+    -fx-font-size: 32px;
+    -fx-text-fill: #981f32;
+    -fx-font-family: "Palatino";
+    -fx-font-weight: 900;
+    -fx-padding: 10 20 10 20;
+    -fx-background-color: #FFD700;
+    -fx-background-radius: 5;
+    -fx-translate-y: 20;
+}
+
+.chart-legend {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFD700;
+    -fx-font-family: "Palatino";
+}
+
+.chart-pie-label {
+    -fx-font-size: 20px;
+    -fx-fill: #FFD700;
+    -fx-font-family: "Palatino";
+    -fx-font-weight: bold;
+}
+
+/*
+* Allstudents-title and Allstudents-selectCohort are in the Students View UI
+* Title is "All Students" and selectCohort is the label next to the cohort dropdown
+
+NOT USING
+*/
+
+.as-title {
+    -fx-font-size: 32px;
+    -fx-text-fill: #FFD700;
+    -fx-font-family: "Palatino";
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 0 0; /* Remove default padding */
+}
+
+.as-selectCohortLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFD700;
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 0 0; /* Remove default padding */
+}
+
+.as-gen-report-button {
+	-fx-font-size: 32px;
+	-fx-text-fill: #FFD700;
+	-fx-font-family: "Palatino";
+	-fx-font-weight: 900;
+	-fx-padding: 0 0 0 0; /* Remove default padding */
+}
+
+.as-selectCohortcombobox {
+	-fx-font-size: 32px;
+	-fx-text-fill: #FFD700;
+	-fx-font-family: "Palatino";
+	-fx-font-weight: 900;
+	-fx-padding: 0 0 0 0; /* Remove default padding */
+}
+
+.classOf-button {
+	/* Edited the button the landing page to have a gradient (Average GPA and cohort button) */
+	-fx-background-color: linear-gradient(
+	    from 0% 0% to 100% 0%, 
+	    #a83044 0%,  
+	    #981f32 100%  /* dark crimson red */
+	);
+    -fx-font-family: "Palatino";
+    -fx-font-size: 22px;
+    -fx-text-fill: #FFD700;  /* Gold text color */
+    -fx-background-radius: 5;
+    -fx-alignment: center;
+}
+
+/* Styling for the GPA line chart */
+.series-gpa {
+    -fx-stroke: #FCB81E;  /* Gold color for the line, matching other gold elements */
+    -fx-stroke-width: 3px;  
+}
+
+.chart-symbol {  /* The symbols/points on the line */
+    -fx-background-color: #981f32;  /* Crimson for the data points */
+    -fx-background-radius: 5px;  
+    -fx-padding: 5px;  
+}
+
+.chart-line-symbol {
+    -fx-background-color: #981f32, white;  /* Crimson points with white outline */
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+/* Special styling for term start points */
+.term-start-point {
+    -fx-background-color: #FFD700;  /* Gold for term start points */
+    -fx-background-radius: 8px;
+    -fx-padding: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+}
+
+.chart-tooltip {
+    -fx-background-color: rgba(0, 0, 0, 0.8);
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Style the plot background */
+.chart-plot-background {
+    -fx-background-color: rgba(50, 50, 50, 0.5);
+    -fx-border-color: #FCB81E;
+    -fx-border-width: 1px;
+}
+
+/* Style the axis */
+.axis {
+    -fx-tick-label-fill: white;
+    -fx-font-family: "Palatino";
+    -fx-font-size: 12px;
+}
+
+.axis-label {
+    -fx-text-fill: #FCB81E;
+    -fx-font-size: 14px;
+}
+
+/* Make vertical chart lines clearer */
+.chart-vertical-grid-lines {
+    -fx-stroke: #555555;
+    -fx-stroke-dash-array: 3 3;
+}
+
+/* Make horizontal chart lines clearer */
+.chart-horizontal-grid-lines {
+    -fx-stroke: #555555;
+    -fx-stroke-dash-array: 3 3;
+}
+
+/* Styling for the chart toggle button */
+.chart-toggle-button {
+    -fx-background-color: #FCB81E;  /* Gold background */
+    -fx-text-fill: #981f32;  /* Crimson text */
+    -fx-font-family: "Palatino";
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10 5 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 2, 0, 0, 0);
+}
+
+.chart-toggle-button:selected {
+    -fx-background-color: #981f32;  /* Crimson background when selected */
+    -fx-text-fill: #FCB81E;  /* Gold text when selected */
+}
+
+.chart-toggle-button:hover {
+    -fx-background-color: #FFCA4A;  /* Lighter gold on hover */
+    -fx-cursor: hand;
+}
+
+.chart-toggle-button:selected:hover {
+    -fx-background-color: #B52539;  /* Lighter crimson on hover when selected */
+    -fx-cursor: hand;
+}
+
+/* Style points with no GPA data */
+.no-data-point {
+    -fx-background-color: transparent;
+    -fx-border-color: #777777;
+    -fx-border-width: 1px;
+    -fx-border-style: dashed;
+    -fx-border-radius: 5px;
+    -fx-padding: 3px;
+}
+
+.clickable-row {
+    -fx-cursor: hand;
+}
+
+.clickable-row:hover {
+    -fx-background-color: rgba(152, 31, 50, 0.3); /* Transparent version of AC crimson */
+}
+
+/* Buttons on Student dash */
+.studentDash-button {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 0%, 
+        #a83044 0%,  
+        #981f32 100%  /* dark crimson red */
+    );
+    -fx-font-family: "Palatino";
+    -fx-font-size: 22px;
+    -fx-text-fill: #FFD700;  /* Gold text color */
+    -fx-background-radius: 5;
+    -fx-alignment: center;
+}
+
+.studentDash-button:hover {
+    /* Edited the button the landing page to have a gradient (Average GPA and cohort button) */
+    -fx-background-color: derive(#981f32, +25%);
+    -fx-border-color: derive(#981f32, +25%);
+    -fx-border-width: 2px;
+    -fx-border-radius: 3;
+    -fx-effect: dropshadow(three-pass-box, derive(#981f32, +25%), 10, 0, 0, 0);
+    -fx-background-insets: 0, 0.25, 0.5;
+	-fx-cursor: hand;
+}
+
+

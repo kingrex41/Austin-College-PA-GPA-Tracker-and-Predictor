@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+
+*.class
+*.log
+*.jar
+cs380/target/
+.settings/
+.classpath
+bin/
+.DS_Store
+=======
+/target/
+/bin/
+>>>>>>> studentdash

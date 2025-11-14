@@ -1,0 +1,184 @@
+/*
+ * Consolidated Style Sheet for PA-GPA Application
+ * This file contains all styles for the application, organized by component type
+ */
+
+/* Global Styles */
+.root {
+    -fx-background-color: #404040;  /* Dark grey background on the whole page  */
+}
+
+/* Header Styles */
+.header-image {
+    -fx-effect: none;
+}
+
+.header-background {
+    -fx-background-color: #981f32;
+    -fx-min-width: 100%;
+    -fx-padding: 0;
+    -fx-effect: none;
+}
+
+.top-bar {
+    -fx-background-color: #981f32;  /* Dark crimson red color for top bar - changed to match AC swatch */
+    -fx-min-height: 60px;
+    -fx-pref-height: 60px;
+    -fx-max-height: 60px;
+}
+
+/* Button Styles */
+.stat-button {
+    -fx-background-color: #981f32;  /* Updated red color for buttons */
+    -fx-min-width: 200px;
+    -fx-min-height: 160px;
+    -fx-max-width: 200px;
+    -fx-max-height: 160px;
+    -fx-font-family: "Palatino";
+    -fx-font-size: 28px;
+    -fx-text-fill: #FFD700;  
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 3, 0, 0, 0);
+    -fx-translate-y: -60; /* Move buttons up by 60 pixels */
+}
+
+.stat-button:focused {
+    -fx-background-color: #981f32;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 3px;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #FFD700, 10, 0, 0, 0);
+    -fx-background-insets: 0, 1, 2;
+}
+
+.stat-button:hover {
+    -fx-background-color: #b52539;
+    -fx-cursor: hand;
+}
+
+.all-students-button {
+    -fx-background-color: #981f32;
+    -fx-min-width: 400px;
+    -fx-min-height: 80px;
+    -fx-font-family: "Palatino";
+    -fx-font-size: 32px;
+    -fx-text-fill: #FFD700;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 3, 0, 0, 0);
+    -fx-translate-y: -40;
+}
+
+.all-students-button:focused {
+    -fx-background-color: #981f32;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 3px;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #FFD700, 10, 0, 0, 0);
+    -fx-background-insets: 0, 1, 2;
+}
+
+.all-students-button:hover {
+    -fx-background-color: #b52539;
+    -fx-cursor: hand;
+}
+
+/* Chart Styles */
+.chart {
+    -fx-font-family: "Palatino";
+    -fx-text-fill: #FFD700;
+    -fx-padding: 0 0 0 0;
+}
+
+.chart-title {
+    -fx-font-size: 32px;
+    -fx-text-fill: #FFD700;
+    -fx-font-family: "Palatino";
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 0 0;
+    -fx-translate-y: 20;
+}
+
+.chart-legend {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFD700;
+    -fx-font-family: "Palatino";
+}
+
+.chart-pie-label {
+    -fx-font-size: 20px;
+    -fx-fill: #FFD700;
+    -fx-font-family: "Palatino";
+    -fx-font-weight: bold;
+}
+
+/* All Students View Styles */
+.sv-title {
+    -fx-font-size: 32px;
+    -fx-text-fill: #FFD700;
+    -fx-font-family: "Palatino";
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 0 0;
+}
+
+.sv-selectCohortLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFD700;
+	-fx-font-family: "Palatino";
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 0 0;
+}
+
+.sv-gen-report-button {
+    -fx-background-color: #981f32;
+	-fx-text-fill: #FFD700;
+	-fx-font-size: 14px;
+	-fx-font-family: "Palatino";
+}
+
+.sv-gen-report-button:focused {
+    -fx-background-color: #981f32;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 3px;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #FFD700, 10, 0, 0, 0);
+    -fx-background-insets: 0, 1, 2;
+}
+
+.sv-gen-report-button:hover {
+    -fx-background-color: #b52539;
+    -fx-cursor: hand;
+}
+
+.sv-cohort-combobox {
+	-fx-text-fill: black;
+	-fx-font-size: 14px;
+	-fx-font-family: "Palatino";
+}
+
+.incorrect-info-box {
+    -fx-background-color: #981f32;
+    -fx-padding: 3;
+    -fx-alignment: center;
+}
+
+.menu-link,
+.menu-link:focused {
+    -fx-text-fill: #FFD700;
+    -fx-underline: true;                  
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;          
+    -fx-faint-focus-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.menu-link:hover {
+    -fx-underline: true; 
+	-fx-text-fill: white; 
+}
+
+.menu-spacer {
+	-fx-text-fill: #FFD700; 
+}
+
